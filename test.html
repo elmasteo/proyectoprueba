@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script>
+var objeto = {
+    "sessionToken":"3993eb0c-5f64-4a6c-b16c-485818eb76eb",
+    "merchantId":"427583496191624621",
+    "merchantSiteId":"142033",
+    "clientRequestId":"1C6CT7V1L",
+    "amount":"200",
+    "currency":"USD",
+    "userTokenId":"230811147",
+    "clientUniqueId":"12345",
+    "paymentOption":{
+        "alternativePaymentMethod":{
+            "paymentMethod":"apmgw_MoneyBookers",
+            "account_id":"SkrillTestUser3"
+        }
+    },
+    "billingAddress":{
+        "firstName": "John",
+        "lastName": "Smith",
+        "country":"US",
+        "email":"john.smith@email.com"
+    },
+    "deviceDetails":{
+        "ipAddress":"192.168.2.38"
+    },
+    "userDetails":{
+        "firstName": "John",
+        "lastName": "Smith",
+        "country":"US",
+        "email":"john.smith@email.com"
+  },
+    "timeStamp":"20191105081140",
+    "checksum":"edfb11a5c5ea8b2a7f53a6bc623226c0"
+};
+// Verifica si el objeto "paymentOption" ya existe
+if (objeto.paymentOption.alternativePaymentMethod) {
+  // Agrega los nuevos campos al objeto "paymentOption"
+  objeto.paymentOption.alternativePaymentMethod.paymentez_userName = "Sanpisha";
+  objeto.paymentOption.alternativePaymentMethod.paymentez_userType = "N";
+  objeto.paymentOption.alternativePaymentMethod.paymentez_userFisNumber = "CC";
+  objeto.paymentOption.alternativePaymentMethod.paymentez_fiscalNumber = "1014296013";
+  objeto.paymentOption.alternativePaymentMethod.paymentez_email = "sgomez@paymentez.com";
+  objeto.paymentOption.alternativePaymentMethod.paymentez_bankCode = "1022";
+  
+} else {
+  // Si el objeto "paymentOption" no existe, crea uno nuevo con los campos adicionales
+  objeto.paymentOption.alternativePaymentMethod = {
+    nuevoCampo: "valorNuevo",
+    otroCampo: "otroValor"
+  };
+}
+// Convierte el objeto JavaScript actualizado a JSON}
+var nuevoJson = JSON.stringify(objeto);
+console.log(nuevoJson);
+</script>
+
+  <p>Esta página web es una página HTML válida.</p>
+
+
+
+</body>
+</html>
