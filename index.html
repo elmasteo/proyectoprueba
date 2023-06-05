@@ -6,9 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>Hola mundo</h1>
-    <p>Esta es otra prueba el día de hoy</p>
+    <div id="result"></div>
+
+        <select id="producto" name="producto">
+        <option value="apmgw_MoneyBookers">Money Bookers</option>
+        <option value="apmgw_PSE_PZ">PSE</option>
+        <option value="apmgw_OXXO_PAY">Oxxo</option>
+        <option value="apmgw_Safetypay">SafetyPay</option>
+        <option value="apmgw_Colombia_Payouts">Payout</option>
+        <option value="apmgw_expresscheckout">PayPal</option>
+        </select>
+        <button type="submit" onclick="enviar()">Enviar</button>
 <script>
+   
+function enviar()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("producto").value;
+document.getElementById("result").innerHTML = cod;
+
+}
+
 var objeto = {
     "sessionToken":"3993eb0c-5f64-4a6c-b16c-485818eb76eb",
     "merchantId":"427583496191624621",
@@ -63,8 +81,6 @@ if (objeto.paymentOption.alternativePaymentMethod) {
 var nuevoJson = JSON.stringify(objeto);
 console.log(nuevoJson);
 </script>
-
-  <p>Esta es una prueba</p>
 
 
 
